@@ -1,7 +1,7 @@
 // Go support for Protocol Buffers - Google's data interchange format
 //
 // Copyright 2015 The Go Authors.  All rights reserved.
-// https://github.com/golang/protobuf
+// https://github.com/levi9311/protobuf
 //
 // Redistribution and use in source and binary forms, with or without
 // modification, are permitted provided that the following conditions are
@@ -51,9 +51,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/golang/protobuf/proto"
+	"github.com/levi9311/protobuf/proto"
 
-	stpb "github.com/golang/protobuf/ptypes/struct"
+	stpb "github.com/levi9311/protobuf/ptypes/struct"
 )
 
 const secondInNanos = int64(time.Second / time.Nanosecond)
@@ -109,6 +109,7 @@ func defaultResolveAny(typeUrl string) (proto.Message, error) {
 // parsed.
 //
 // The JSON marshaling must follow the proto to JSON specification:
+//
 //	https://developers.google.com/protocol-buffers/docs/proto3#json
 type JSONPBMarshaler interface {
 	MarshalJSONPB(*Marshaler) ([]byte, error)
@@ -120,6 +121,7 @@ type JSONPBMarshaler interface {
 // produced.
 //
 // The JSON unmarshaling must follow the JSON to proto specification:
+//
 //	https://developers.google.com/protocol-buffers/docs/proto3#json
 type JSONPBUnmarshaler interface {
 	UnmarshalJSONPB(*Unmarshaler, []byte) error
